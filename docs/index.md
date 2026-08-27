@@ -4,6 +4,7 @@ description: 从启动、依赖注入和请求管道，一直学到 Prisma、JWT
 sidebar: false
 aside: false
 pageClass: course-home-page
+lastUpdated: false
 prev: false
 next: false
 ---

@@ -59,6 +59,7 @@ test('首页展示学习路线且没有页面级横向滚动', async ({ page }) 
   await expect(page.getByRole('heading', { level: 2, name: '七阶段学习路线' })).toBeVisible();
   await expect(page.locator('.learning-path > a')).toHaveCount(7);
   await expect(page.locator('.course-audience__item')).toHaveCount(3);
+  await expect(page.locator('.VPLastUpdated')).toHaveCount(0);
   await expect(page.locator(`link[href="${sitePath('favicon.ico')}"]`)).toHaveCount(1);
   await expect(page.locator(`link[href="${sitePath('favicon.png')}"]`)).toHaveCount(1);
 
@@ -76,6 +77,7 @@ test('首页展示学习路线且没有页面级横向滚动', async ({ page }) 
 test('整体认知页使用从首页迁移的全流程总图', async ({ page }) => {
   await page.goto(sitePath('/guide/overview.html'));
   await expect(page.getByRole('heading', { level: 1, name: 'NestJS 整体认知' })).toBeVisible();
+  await expect(page.locator('.VPLastUpdated')).toBeVisible();
 
   const diagram = page.locator('.doc-diagram');
   await expect(diagram.getByRole('button', { name: '放大查看：NestJS 全流程架构学习总图' })).toBeVisible();
